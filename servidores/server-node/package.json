@@ -1,0 +1,9 @@
+{
+  "name": "sebo-digital-server-node",
+  "version": "1.0.0",
+  "description": "Servidor mínimo em Node.js (sem frameworks) para servir o front-end estático do projeto base.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

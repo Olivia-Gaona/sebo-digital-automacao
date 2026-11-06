@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "titulo": "Grande Sertão: Veredas",
+    "autor": "Guimarães Rosa",
+    "categoria": "romance",
+    "preco": 32.00,
+    "estoque": 2,
+    "conservacao": "Bom estado, capa levemente amarelada",
+    "descricao": "Romance narrado por Riobaldo, ex-jagunço que relembra travessias pelo sertão mineiro."
+  },
+  {
+    "id": 2,
+    "titulo": "Dom Casmurro",
+    "autor": "Machado de Assis",
+    "categoria": "romance",
+    "preco": 24.90,
+    "estoque": 1,
+    "conservacao": "Ótimo estado, sem anotações",
+    "descricao": "Bento Santiago conta sua história com Capitu e deixa o leitor com uma dúvida que atravessa gerações."
+  },
+  {
+    "id": 3,
+    "titulo": "Antologia Poética",
+    "autor": "Manuel Bandeira",
+    "categoria": "poesia",
+    "preco": 19.50,
+    "estoque": 3,
+    "conservacao": "Bom estado, algumas páginas sublinhadas a lápis",
+    "descricao": "Seleção de poemas feita pelo próprio autor, do lirismo ao humor do cotidiano."
+  },
+  {
+    "id": 4,
+    "titulo": "Introdução a Algoritmos",
+    "autor": "Cormen et al.",
+    "categoria": "tecnico",
+    "preco": 89.00,
+    "estoque": 1,
+    "conservacao": "Regular, lombada gasta",
+    "descricao": "Referência clássica sobre projeto e análise de algoritmos, usada em cursos de computação."
+  },
+  {
+    "id": 5,
+    "titulo": "Redes de Computadores",
+    "autor": "Tanenbaum",
+    "categoria": "tecnico",
+    "preco": 74.00,
+    "estoque": 2,
+    "conservacao": "Bom estado",
+    "descricao": "Livro-texto que percorre as camadas de rede, dos meios físicos às aplicações."
+  },
+  {
+    "id": 6,
+    "titulo": "Claro Enigma",
+    "autor": "Carlos Drummond de Andrade",
+    "categoria": "poesia",
+    "preco": 22.00,
+    "estoque": 0,
+    "conservacao": "Bom estado",
+    "descricao": "Livro de poemas de tom reflexivo, com formas mais clássicas do que as obras anteriores do autor."
+  }
+]

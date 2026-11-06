@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebo Digital — livros usados de romance, poesia e técnicos</title>
+
+  <!--
+    Item 7: metadados escritos À MÃO, porque esta página é estática (é servida como
+    arquivo pronto pelos dois servidores). Compare com /catalogo.html e /livros/...,
+    em que o server.js GERA essas mesmas tags a partir dos dados.
+  -->
+  <meta name="description" content="Sebo Digital: livros usados de romance, poesia e técnicos, com o estado de conservação de cada exemplar descrito.">
+  <meta property="og:site_name" content="Sebo Digital">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sebo Digital — livros usados">
+  <meta property="og:description" content="Livros usados de romance, poesia e técnicos, com o estado de cada exemplar descrito.">
+
+  <!-- Dados estruturados da loja (schema.org): quem somos, para os buscadores -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BookStore",
+    "name": "Sebo Digital",
+    "description": "Sebo online de livros usados: romance, poesia e livros técnicos.",
+    "currenciesAccepted": "BRL"
+  }
+  </script>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a class="marca" href="/">Sebo Digital</a>
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="/" aria-current="page">Início</a>
+        <a href="/catalogo.html">Catálogo</a>
+        <a href="/catalogo-api.html">Catálogo via API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <div>
+        <p class="selo">Projeto base — Programação para Internet</p>
+        <h1 id="titulo-principal">Livros usados, achados com carinho.</h1>
+        <p>
+          Este é o projeto de referência construído em aula. Cada aula acrescenta uma camada,
+          seguindo a ordem da ementa.
+        </p>
+      </div>
+      <!-- aside: conteúdo relacionado, mas que não é o assunto principal da página -->
+      <aside class="hero-destaque" aria-labelledby="titulo-destaque">
+        <h2 id="titulo-destaque">Destaque da semana</h2>
+        <p>“Grande Sertão: Veredas”, edição de bolso, capa levemente amarelada.</p>
+        <p class="preco"><data value="32.00">R$ 32,00</data></p>
+      </aside>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-ementa">
+      <h2 id="titulo-ementa">Como este projeto acompanha a ementa</h2>
+      <p>
+        O material de cada item está na pasta <code>docs/</code>. O catálogo existe em três
+        versões, uma para cada forma de levar conteúdo até o navegador:
+      </p>
+      <ul>
+        <li>No servidor Python (porta 8000), <a href="/catalogo.html">Catálogo</a> é um arquivo
+          pronto, sempre igual.</li>
+        <li>No servidor Node (porta 3000), <a href="/catalogo.html">Catálogo</a> é montado pelo
+          servidor a cada visita, e cada livro tem sua própria página, como
+          <a href="/livros/dom-casmurro">Dom Casmurro</a>.</li>
+        <li>No servidor Node, <a href="/catalogo-api.html">Catálogo via API</a> chega vazio e é
+          montado pelo navegador, com dados pedidos ao servidor.</li>
+      </ul>
+      <p>
+        No servidor Node, a <a href="/robo">Visão do robô</a> mostra o que buscadores e redes
+        sociais conseguem ler de cada página.
+      </p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    Livraria Sebo Digital — projeto acadêmico, sem fins comerciais.
+  </footer>
+
+</body>
+</html>

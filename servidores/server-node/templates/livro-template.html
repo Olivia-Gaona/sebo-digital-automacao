@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITULO_PAGINA}}</title>
+  <!-- Item 7: metadados e dados estruturados deste livro, gerados pelo server.js -->
+  {{META}}
+  {{JSON_LD}}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a class="marca" href="/">Sebo Digital</a>
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="/">Início</a>
+        <a href="/catalogo.html">Catálogo</a>
+        <a href="/catalogo-api.html">Catálogo via API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- A mesma trilha que está no JSON-LD (BreadcrumbList), agora para pessoas -->
+    <nav class="trilha" aria-label="Você está em">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><a href="/catalogo.html">Catálogo</a></li>
+        <li><a href="/catalogo.html?categoria={{CATEGORIA_CODIGO}}">{{CATEGORIA}}</a></li>
+        <li aria-current="page">{{TITULO}}</li>
+      </ol>
+    </nav>
+
+    <article class="livro" data-categoria="{{CATEGORIA_CODIGO}}">
+      <header class="livro-cabecalho">
+        <p class="categoria">{{CATEGORIA}}</p>
+        <h1 class="produto-titulo">{{TITULO}}</h1>
+        <p class="autor">de {{AUTOR}}</p>
+      </header>
+
+      <p class="livro-descricao">{{DESCRICAO}}</p>
+
+      <!-- dl/dt/dd: lista de "termo e definição", a marcação certa para pares rótulo-valor -->
+      <dl class="livro-ficha">
+        <dt>Estado do exemplar</dt>
+        <dd>{{CONSERVACAO}}</dd>
+        <dt>Preço</dt>
+        <dd class="preco"><data value="{{PRECO_VALOR}}">{{PRECO}}</data></dd>
+      </dl>
+
+      {{SITUACAO}}
+      {{BOTAO}}
+    </article>
+  </main>
+
+  <p class="carrinho-flutuante" id="carrinho-flutuante" role="status">Carrinho: 0 item(ns)</p>
+
+  <footer class="rodape">
+    Livraria Sebo Digital — projeto acadêmico, sem fins comerciais.
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

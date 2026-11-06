@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo via API — Sebo Digital</title>
+  <meta name="description" content="Catálogo de livros usados do Sebo Digital, montado no navegador a partir da API.">
+  <!--
+    Item 7: esta página não tem Open Graph nem JSON-LD no HTML. O JSON-LD é criado
+    depois, pelo JavaScript (ver inserirDadosEstruturados em catalogo-api.js).
+    Compare as duas versões do catálogo em /robo.
+  -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a class="marca" href="/">Sebo Digital</a>
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="/">Início</a>
+        <a href="/catalogo.html">Catálogo</a>
+        <a href="/catalogo-api.html" aria-current="page">Catálogo via API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="secao" aria-labelledby="titulo-catalogo">
+      <h1 id="titulo-catalogo">Catálogo</h1>
+
+      <!--
+        Item 6: esta página chega VAZIA do servidor. Quem preenche tudo é o
+        JavaScript (assets/js/catalogo-api.js), com dados pedidos à API.
+        Ctrl+U (ver código-fonte) mostra estes containers vazios.
+      -->
+      <p class="aviso-inseguro" id="aviso-inseguro" hidden>
+        Modo inseguro ativo: os textos dos produtos estão sendo inseridos com innerHTML,
+        sem escaping. Use só para demonstração.
+      </p>
+
+      <p class="status-carregamento" id="status" role="status">Carregando catálogo…</p>
+
+      <p class="aviso-destaque" id="destaque" hidden></p>
+
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+
+      <!-- Item 7: avisos para leitor de tela quando a lista muda sem recarregar a página -->
+      <p class="sr-only" id="anuncio" role="status"></p>
+
+      <div class="grade-produtos" id="grade-produtos"></div>
+    </section>
+  </main>
+
+  <p class="carrinho-flutuante" id="carrinho-flutuante" role="status">Carrinho: 0 item(ns)</p>
+
+  <footer class="rodape">
+    Livraria Sebo Digital — projeto acadêmico, sem fins comerciais.<br>
+    <small id="info-carregamento"></small>
+  </footer>
+
+  <script src="/assets/js/catalogo-api.js"></script>
+</body>
+</html>

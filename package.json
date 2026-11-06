@@ -1,0 +1,18 @@
+{
+  "name": "sebo-digital",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Projeto base da disciplina Programação para Internet: a livraria Sebo Digital.",
+  "scripts": {
+    "start": "node servidores/server-node/server.js",
+    "dev": "node --watch servidores/server-node/server.js",
+    "test": "node --test",
+    "build": "node servidores/server-node/build.js",
+    "preview": "node servidores/server-node/preview.js",
+    "db:reset": "node servidores/server-node/recriar-banco.js",
+    "verificar": "npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

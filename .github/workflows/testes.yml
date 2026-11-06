@@ -1,0 +1,21 @@
+# Item 9: integração contínua (CI). A cada "push" para o GitHub, uma máquina do
+# GitHub baixa o projeto, roda os testes e a construção. Se algo quebrar, aparece
+# um X vermelho ao lado do commit, e todo mundo do grupo fica sabendo.
+name: Testes
+
+on: [push, pull_request]
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v5
+      - name: Instalar o Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Rodar os testes
+        run: npm test
+      - name: Construir o site estático
+        run: npm run build

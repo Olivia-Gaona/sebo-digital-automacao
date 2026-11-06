@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITULO_PAGINA}}</title>
+  <!--
+    Item 7: tudo deste bloco para baixo é para MÁQUINAS, não aparece na tela.
+    O marcador META vira meta description, endereço canônico e Open Graph.
+    O marcador JSON_LD vira os dados estruturados schema.org (lista de livros + trilha).
+    Os dois são gerados pelo server.js a partir de dados/produtos.json.
+  -->
+  {{META}}
+  {{JSON_LD}}
+  <!-- Caminhos começando com "/" funcionam em qualquer página, inclusive /livros/... -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a class="marca" href="/">Sebo Digital</a>
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="/">Início</a>
+        <a href="/catalogo.html" aria-current="page">Catálogo</a>
+        <a href="/catalogo-api.html">Catálogo via API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <nav class="trilha" aria-label="Você está em">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><a href="/catalogo.html" aria-current="page">Catálogo</a></li>
+      </ol>
+    </nav>
+
+    <section class="secao" aria-labelledby="titulo-catalogo">
+      <h1 id="titulo-catalogo">{{TITULO_H1}}</h1>
+
+      <p class="aviso-destaque">
+        {{DESTAQUE}}
+      </p>
+
+      <nav class="filtros" aria-label="Filtrar por categoria">
+        {{FILTROS}}
+      </nav>
+
+      <div class="grade-produtos" id="grade-produtos">
+        {{PRODUTOS}}
+      </div>
+    </section>
+  </main>
+
+  <p class="carrinho-flutuante" id="carrinho-flutuante" role="status">Carrinho: 0 item(ns)</p>
+
+  <footer class="rodape">
+    Livraria Sebo Digital — projeto acadêmico, sem fins comerciais.<br>
+    <small>{{TOTAL}} livro(s) no catálogo · página gerada {{ORIGEM}} em {{GERADO_EM}}</small>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

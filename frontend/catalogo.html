@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — Sebo Digital</title>
+  <!--
+    Versão ESTÁTICA (servida pelo Python). A marcação semântica foi corrigida à mão,
+    mas não há páginas por livro, JSON-LD nem Open Graph: para ter isso num site
+    estático, alguém teria que escrever e manter um arquivo por livro. É a mesma
+    limitação do "Destaque agora" do item 5, só que agora para os robôs.
+  -->
+  <meta name="description" content="Catálogo de livros usados do Sebo Digital: romance, poesia e livros técnicos.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a class="marca" href="/">Sebo Digital</a>
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="/">Início</a>
+        <a href="/catalogo.html" aria-current="page">Catálogo</a>
+        <a href="/catalogo-api.html">Catálogo via API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="secao" aria-labelledby="titulo-catalogo">
+      <h1 id="titulo-catalogo">Catálogo</h1>
+
+      <!-- Item 5: destaque fixo, escrito à mão (contraste com a versão do Node) -->
+      <p class="aviso-destaque">
+        Destaque agora: <strong>Grande Sertão: Veredas</strong> (Guimarães Rosa) — R$ 32,00
+      </p>
+
+      <!--
+        Estes filtros funcionam só no navegador (assets/js/app.js), escondendo cards
+        que já estão na página. Por isso são <button> (ação na própria página) e não
+        <a> (ir para outro endereço). aria-pressed avisa ao leitor de tela qual está ligado.
+      -->
+      <div class="filtros" role="group" aria-label="Filtrar por categoria">
+        <button class="filtro-btn ativo" data-categoria="todos" aria-pressed="true">Todos</button>
+        <button class="filtro-btn" data-categoria="romance" aria-pressed="false">Romance</button>
+        <button class="filtro-btn" data-categoria="poesia" aria-pressed="false">Poesia</button>
+        <button class="filtro-btn" data-categoria="tecnico" aria-pressed="false">Técnico</button>
+      </div>
+
+      <div class="grade-produtos" id="grade-produtos">
+        <article class="produto" data-categoria="romance">
+          <p class="categoria">Romance</p>
+          <h2 class="produto-titulo">Grande Sertão: Veredas</h2>
+          <p class="autor">Guimarães Rosa</p>
+          <p class="preco"><data value="32.00">R$ 32,00</data></p>
+          <button class="add-carrinho">Adicionar<span class="sr-only"> Grande Sertão: Veredas ao carrinho</span></button>
+        </article>
+
+        <article class="produto" data-categoria="romance">
+          <p class="categoria">Romance</p>
+          <h2 class="produto-titulo">Dom Casmurro</h2>
+          <p class="autor">Machado de Assis</p>
+          <p class="preco"><data value="24.90">R$ 24,90</data></p>
+          <button class="add-carrinho">Adicionar<span class="sr-only"> Dom Casmurro ao carrinho</span></button>
+        </article>
+
+        <article class="produto" data-categoria="poesia">
+          <p class="categoria">Poesia</p>
+          <h2 class="produto-titulo">Antologia Poética</h2>
+          <p class="autor">Manuel Bandeira</p>
+          <p class="preco"><data value="19.50">R$ 19,50</data></p>
+          <button class="add-carrinho">Adicionar<span class="sr-only"> Antologia Poética ao carrinho</span></button>
+        </article>
+
+        <article class="produto" data-categoria="tecnico">
+          <p class="categoria">Técnico</p>
+          <h2 class="produto-titulo">Introdução a Algoritmos</h2>
+          <p class="autor">Cormen et al.</p>
+          <p class="preco"><data value="89.00">R$ 89,00</data></p>
+          <button class="add-carrinho">Adicionar<span class="sr-only"> Introdução a Algoritmos ao carrinho</span></button>
+        </article>
+
+        <article class="produto" data-categoria="tecnico">
+          <p class="categoria">Técnico</p>
+          <h2 class="produto-titulo">Redes de Computadores</h2>
+          <p class="autor">Tanenbaum</p>
+          <p class="preco"><data value="74.00">R$ 74,00</data></p>
+          <button class="add-carrinho">Adicionar<span class="sr-only"> Redes de Computadores ao carrinho</span></button>
+        </article>
+
+        <article class="produto" data-categoria="poesia">
+          <p class="categoria">Poesia</p>
+          <h2 class="produto-titulo">Claro Enigma</h2>
+          <p class="autor">Carlos Drummond de Andrade</p>
+          <p class="preco"><data value="22.00">R$ 22,00</data></p>
+          <button class="add-carrinho" disabled>Esgotado</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <p class="carrinho-flutuante" id="carrinho-flutuante" role="status">Carrinho: 0 item(ns)</p>
+
+  <footer class="rodape">
+    Livraria Sebo Digital — projeto acadêmico, sem fins comerciais.
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

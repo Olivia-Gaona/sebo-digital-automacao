@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visão do robô — Sebo Digital</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a class="marca" href="/">Sebo Digital</a>
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="/">Início</a>
+        <a href="/catalogo.html">Catálogo</a>
+        <a href="/catalogo-api.html">Catálogo via API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="secao robo">
+      <h1>Visão do robô</h1>
+      <p>Ferramenta da aula. Ela baixa o HTML de uma página deste site <strong>sem executar
+        JavaScript</strong>, como fazem os robôs que montam a prévia de um link no WhatsApp, e mostra
+        o que dá para extrair dele.</p>
+
+      <form class="robo-form" action="/robo" method="get">
+        <label for="campo-url">Caminho da página</label>
+        <input id="campo-url" name="url" type="text" value="{{VALOR_CAMPO}}" placeholder="/livros/dom-casmurro">
+        <button type="submit" class="filtro-btn">Analisar</button>
+      </form>
+
+      <nav aria-label="Páginas sugeridas">
+        <ul class="robo-atalhos">
+          {{ATALHOS}}
+        </ul>
+      </nav>
+
+      {{RELATORIO}}
+    </section>
+  </main>
+
+  <footer class="rodape">
+    Livraria Sebo Digital — projeto acadêmico, sem fins comerciais.
+  </footer>
+</body>
+</html>
