@@ -3,6 +3,9 @@
 Projeto de referência construído em aula para a disciplina **Programação para Internet**. A cada
 aula, um item da ementa é acrescentado na mesma pasta. Esta versão cobre os **itens 1 a 9**.
 
+
+vercel vercel vercel
+
 ## O que existe em cada item
 
 - **Item 1 — Arquitetura da Internet e WWW**: `docs/01-arquitetura-internet-www.md`, usando este
